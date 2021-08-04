@@ -29,14 +29,17 @@ body {
   margin-bottom: 200px;
 }
 .main__text {
+  transition: 1s;
   font-size: 60px;
   font-weight: 900;
   position: relative;
   margin-bottom: 50px;
+  letter-spacing: 2px;
 }
 .main__text:hover {
   cursor: default;
 }
+
 .main__text ::after {
   display: block;
   content: "";
@@ -66,7 +69,7 @@ body {
   font-weight: 400;
 }
 .main__form .form_input {
-  width: clamp(300px, 70%, 800px);
+  width: clamp(350px, 70%, 800px);
   height: 50px;
   background-color: white;
   border-radius: 15px;
@@ -92,6 +95,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.main__form .form_input button img {
+  transition: 0.3s;
+}
+.main__form .form_input button:hover img {
+  transform: translatex(5px);
 }
 .footer {
   display: flex;
@@ -162,8 +171,9 @@ body {
   transform: translateX(0);
   opacity: 1;
 }
+
 #cursor {
-  transition: 0.1s;
+  transition: 0.1s ease-out;
   width: 20px;
   height: 20px;
   border: 1px solid white;
@@ -176,9 +186,17 @@ body {
   opacity: 0;
 }
 @media (max-width: 934px) {
+  body {
+    padding: 24px 24px 10px 24px;
+  }
   #cursor {
     display: none;
   }
+  .footer {
+    font-size: 14px;
+  }
+}
+@media (max-width: 752px) {
   .footer {
     flex-direction: column;
     font-size: 14px;
@@ -189,11 +207,24 @@ body {
   }
 }
 @media (max-width: 694px) {
-  body {
-    padding: 24px 24px 10px 24px;
-  }
   .main__form {
     width: 100%;
+  }
+  .footer {
+    flex-direction: column;
+    font-size: 14px;
+  }
+  .footer .socials {
+    width: max-content;
+    margin: 24px auto;
+  }
+}
+@media (max-width: 525px) {
+  .main__text {
+    text-align: center;
+  }
+  .main__text ::after {
+    display: none;
   }
 }
 
@@ -203,9 +234,6 @@ body {
   }
   .main__form .form_input {
     width: 100%;
-  }
-  .main__text ::after {
-    display: none;
   }
 }
 @media (max-width: 491px) {
@@ -237,4 +265,20 @@ body {
   .separator {
     display: none;
   }
+}
+
+/* for animation */
+.main__text {
+  opacity: 1;
+  transform: translateY(50px);
+}
+.main__form {
+  opacity: 0;
+  transform: translateY(50px);
+}
+.footer {
+  opacity: 0;
+}
+.main__text-stroked {
+  color: white;
 }
