@@ -1,2 +1,3 @@
-# elevateshowcase-website
-Elevate's  showcase website
+# Elevate's showcase website
+
+coming soon page
